@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Web Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="username-container">
+        <h1>Selamat Datang di Public Chat</h1>
+        <p>Masukkan nama panggilan Anda:</p>
+        <input type="text" id="username-input" placeholder="Nama Anda..." maxlength="20">
+        <button id="join-button">Gabung Chat</button>
+        <p id="username-error" class="error-message"></p>
+    </div>
+
+    <div id="chat-container" style="display: none;">
+        <header>
+            <h1>Public Chat</h1>
+            <p>Halo, <strong id="display-username"></strong>!</p>
+             <!-- Opsional: Tampilkan jumlah pengguna aktif
+             <p><span id="user-count">0</span> pengguna online</p>
+             -->
+        </header>
+        <div id="messages">
+            <!-- Pesan chat akan muncul di sini -->
+        </div>
+        <div id="input-area">
+            <input type="text" id="message-input" placeholder="Ketik pesan Anda...">
+            <button id="send-button">Kirim</button>
+        </div>
+    </div>
+
+    <!-- Memuat library Socket.IO client -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Memuat script client kita -->
+    <script src="client.js"></script>
+</body>
+</html>
